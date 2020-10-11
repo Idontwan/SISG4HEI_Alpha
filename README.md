@@ -3,6 +3,7 @@
 
 ## Summary
 SISG4HEI_Alpha generate virtual indoor spatial, travel pattern and activity schedule data, and coverts these data to simulated PIR sensor records and scenarios files of Stage and Gazebo.
+
 This project demostrates the codes and outputs of SISG4HEI_Alpha. Generated indoor spatial, travel pattern and activity schedule data are in SISG4HEI_Alpha/Database; simulated PIR sensor records and scenarios files of Stage and Gazebo are in SISG4HEI_Alpha/Outputs.
 
 ## Running Environment
