@@ -18,5 +18,7 @@ Can Jiang, Mita Laboratory, Keio University
 
 ## References
 [1](https://doi.org/10.22260/ISARC2019/0092). C. Jiang, A. Mita, Automatic floorplan generation of living space for simulating a life of an elderly resident supported by a mobile robot. In Proc. 36th Int. Symp. Automat. Rob. Constr. (ISARC 2019), pp. 688-695, Banff, Canada, 2019.
+
 [2](https://doi.org/10.1016/j.buildenv.2020.106776). C. Jiang, A. Mita, Automatic spatial attribute and travel pattern generation for simulating living spaces for elderly individuals living alone, Build. Environ. 2020; 176, 106776.
+
 [3](https://doi.org/10.1007/978-3-030-51517-1_14). C. Jiang, A. Mita, Automatic daily activity schedule planning for simulating smart house with elderly people living alone, Lect. Notes Comput. Sci. 2020; 12157: 1-13. 
