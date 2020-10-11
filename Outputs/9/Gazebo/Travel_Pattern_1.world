@@ -1,0 +1,44 @@
+<?xml version='1.0' ?>
+<sdf version='1.7'>
+   <world name='Travel_Pattern_1'>
+      <include>
+        <uri>model://ground_plane</uri>
+      </include>
+      <include>
+        <uri>model://My_Model</uri>
+      </include>
+      <include>
+        <uri>model://sun</uri>
+      </include>
+      <include>
+        <uri>model://Robot</uri>
+        <pose>0.0 0.15 0 0 0 -1.5708</pose>
+      </include>
+      <actor name='actor'>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <animation name='walking'>
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+        <interpolate_y>true</interpolate_y>
+      </animation>
+      <script>
+        <trajectory id='0' type='walking'>
+          <waypoint>
+            <time>0.0</time>
+            <pose>1.125 -6.325 0 0 0 -1.751</pose>
+          </waypoint>
+          <waypoint>
+            <time>0.8</time>
+            <pose>1.025 -6.875 0 0 0 -1.562</pose>
+          </waypoint>
+          <waypoint>
+            <time>1.6</time>
+            <pose>1.125 -7.375 0 0 0 -1.373</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+   </world>
+</sdf>

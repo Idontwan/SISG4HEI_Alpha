@@ -1,0 +1,188 @@
+# Definition of the robot
+ define kinect ranger
+(
+  sensor
+  (
+    range_max 6.5
+    fov 58.0
+    samples 640
+  )
+  # generic model properties
+  gui_nose 0
+  size [ 0.06 0.15 0.03 ]
+  color "black"
+)
+
+define e_bio position
+(
+  pose [ 0.0 0.0 0.0 0.0 ]
+  odom_error [0.03 0.03 999999 999999 999999 0.02]
+  size [ 0.2552 0.2552 0.4 ]
+  gui_nose 0
+  color "red"
+
+  kinect(pose [ -0.1 0.0 -0.11 0.0 ])
+)
+
+# Definition the size of all furniture
+define furniture0 model
+(
+  size [2.1 1.8 0.35]
+  gui_nose 0
+)
+
+define furniture1 model
+(
+  size [0.4 0.4 0.55]
+  gui_nose 0
+)
+
+define furniture2 model
+(
+  size [0.6 1.0 1.55]
+  gui_nose 0
+)
+
+define furniture3 model
+(
+  size [1.2 0.5 0.65]
+  gui_nose 0
+)
+
+define furniture4 model
+(
+  size [0.4 0.4 0.45]
+  gui_nose 0
+)
+
+define furniture5 model
+(
+  size [0.6 1.8 0.8]
+  gui_nose 0
+)
+
+define furniture6 model
+(
+  size [0.5 1.5 1.1]
+  gui_nose 0
+)
+
+define furniture7 model
+(
+  size [0.6 0.6 1.45]
+  gui_nose 0
+)
+
+define furniture8 model
+(
+  size [0.3 0.3 0.3]
+  gui_nose 0
+)
+
+define furniture9 model
+(
+  size [1.2 0.8 0.65]
+  gui_nose 0
+)
+
+define furniture10 model
+(
+  size [0.4 0.4 0.4]
+  gui_nose 0
+)
+
+define furniture11 model
+(
+  size [0.9 0.8 0.45]
+  gui_nose 0
+)
+
+define furniture12 model
+(
+  size [0.8 0.4 0.6]
+  gui_nose 0
+)
+
+define furniture13 model
+(
+  size [0.9 0.2 0.5]
+  gui_nose 0
+)
+
+define furniture14 model
+(
+  size [0.2 0.8 0.2]
+  gui_nose 0
+)
+
+define furniture15 model
+(
+  size [0.2 0.8 0.2]
+  gui_nose 0
+)
+
+define furniture16 model
+(
+  size [0.7 0.1 0.4]
+  gui_nose 0
+)
+
+# put in a robot
+e_bio
+(
+  pose [ -4.3 2.3 0.000 0.000 ]
+  name "e_bio1"
+  color "red"
+  gui_nose 1
+)
+
+# put furnitures
+furniture0( pose [ 0.6 -1.1 0.0 0.000 ] color "gray")
+furniture1( pose [ -0.2 0.0 0.0 0.000 ] color "gray")
+furniture2( pose [ 1.4 1.5 0.0 0.000 ] color "gray")
+furniture3( pose [ -0.3 1.15 0.0 0.000 ] color "gray")
+furniture4( pose [ -0.3 1.7 0.0 0.000 ] color "gray")
+furniture5( pose [ -8.4 -0.1 0.0 0.000 ] color "gray")
+furniture6( pose [ -6.6 0.05 0.0 0.000 ] color "gray")
+furniture7( pose [ -6.9 -1.7 0.0 0.000 ] color "gray")
+furniture8( pose [ -8.3 -1.85 0.0 0.000 ] color "gray")
+furniture9( pose [ -4.25 0.55 0.0 0.000 ] color "gray")
+furniture10( pose [ -4.25 1.25 0.0 0.000 ] color "gray")
+furniture11( pose [ -2.7 0.6 0.0 0.000 ] color "gray")
+furniture12( pose [ -2.7 3.0 0.0 0.000 ] color "gray")
+furniture13( pose [ -2.7 0.3 0.45 0.000 ] color "gray")
+furniture14( pose [ -3.05 0.6 0.45 0.000 ] color "gray")
+furniture15( pose [ -2.35 0.6 0.45 0.000 ] color "gray")
+furniture16( pose [ -2.7 3.15 0.6 0.000 ] color "gray")
+
+define floorplan model
+(
+  color "gray30"
+  boundary 0
+  gui_nose 0
+  gui_grid 0
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.01
+
+interval_sim 100  # simulation timestep in milliseconds
+
+window
+(
+  size [ 623 435 ]
+  rotate [ 0.000 0.000 ]
+)
+
+# load an environment bitmap
+floorplan
+(
+  name "Scene"
+  bitmap "Scene.png"
+  size [11.163060917180015 7.150335386721424 2.8]
+  pose [ -3.5026666666666646 -0.030373716632443593 0.000 0.000 ]
+)
