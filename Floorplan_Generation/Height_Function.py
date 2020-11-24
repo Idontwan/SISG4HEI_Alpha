@@ -11,7 +11,7 @@ L_A0, L_A1 = 120000, 240000
 
 FloorHeight = [280, 300, 320, 340]
 Bed_H = [5, 30, 35, 40, 45, 50]
-Poss_Hs = {'Wardrobe': [140, 155, 70], 'Nightstand': [45, 50, 55], 'Desk': [60, 65, 70], 'Chair': [40, 45],
+Poss_Hs = {'Wardrobe': [140, 155, 170], 'Nightstand': [45, 50, 55], 'Desk': [60, 65, 70], 'Chair': [40, 45],
            'Sofa': [40, 45], 'TV': [40, 45, 50, 55, 60, 65, 70], 'Dinner_Table': [60, 65, 70],
            'Kitchen_Stove': [75, 80, 85], 'Cupboard': [100, 105, 110, 115, 120], 'Refrigerator': [125, 145, 165],
            'Wash_Machine': [85], 'Trash_Bin': [30, 45, 60]}
