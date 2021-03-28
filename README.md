@@ -24,4 +24,4 @@ Can Jiang, Mita Laboratory, Keio University
 
 [3](https://doi.org/10.1007/978-3-030-51517-1_14). C. Jiang, A. Mita, Automatic daily activity schedule planning for simulating smart house with elderly people living alone, Lect. Notes Comput. Sci. 2020; 12157: 1-13.
 
-[4](https://doi.org/10.1016/j.jobe.2020.101963). C. Jiang, A. Mita, SISG4HEI_Alpha: alpha version of simulated indoor scenario generator for houses with elderly individuals, J. Build. Eng. ; 101963
+[4](https://doi.org/10.1016/j.jobe.2020.101963). C. Jiang, A. Mita, SISG4HEI_Alpha: alpha version of simulated indoor scenario generator for houses with elderly individuals, J. Build. Eng. 2021; 35, 101963
