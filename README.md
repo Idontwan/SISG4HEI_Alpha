@@ -7,7 +7,7 @@ SISG4HEI_Alpha generate virtual indoor spatial, travel pattern and activity sche
 This project demostrates the codes and outputs of SISG4HEI_Alpha. Generated indoor spatial, travel pattern and activity schedule data are in SISG4HEI_Alpha/Database; simulated PIR sensor records and scenarios files of Stage and Gazebo are in SISG4HEI_Alpha/Outputs.
 
 ## Running Environment
-1. You can run these codes on Linux. If you want to run them on Windows, change all "/" in all Logical Block Addresses to "\\".
+1. You can run these codes on Windows. If you want to run them on Linux, change all "\\" in all Logical Block Addresses to "/".
 2. Need Python3.
 3. Need Libraries such as numpy, json, matplotlib, PIL, tkinter
 
