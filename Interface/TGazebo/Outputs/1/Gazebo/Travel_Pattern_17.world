@@ -1,0 +1,56 @@
+<?xml version='1.0' ?>
+<sdf version='1.7'>
+   <world name='Travel_Pattern_17'>
+      <include>
+         <uri>model://ground_plane</uri>
+      </include>
+      <include>
+         <uri>:model://My_Model</uri>
+      </include>
+      <include>
+         <uri>model://sun</uri>
+      </include>
+      <actor name='actor'>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <animation name='walking'>
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+        <interpolate_y>true</interpolate_y>
+      </animation>
+      <script>
+        <trajectory id='0' type='walking'>
+          <waypoint>
+            <time>0.0</time>
+            <pose>0.475 5.025 0 0 0 -2.761</pose>
+          </waypoint>
+          <waypoint>
+            <time>0.8</time>
+            <pose>-0.025 4.825 0 0 0 -2.525</pose>
+          </waypoint>
+          <waypoint>
+            <time>1.6</time>
+            <pose>-0.375 4.425 0 0 0 -1.976</pose>
+          </waypoint>
+          <waypoint>
+            <time>2.4000000000000004</time>
+            <pose>-0.425 3.875 0 0 0 -1.661</pose>
+          </waypoint>
+          <waypoint>
+            <time>3.2</time>
+            <pose>-0.425 3.875 0 0 0 -0.785</pose>
+          </waypoint>
+          <waypoint>
+            <time>4.0</time>
+            <pose>-0.025 3.475 0 0 0 -1.079</pose>
+          </waypoint>
+          <waypoint>
+            <time>4.800000000000001</time>
+            <pose>0.075 2.975 0 0 0 -1.373</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+   </world>
+</sdf>

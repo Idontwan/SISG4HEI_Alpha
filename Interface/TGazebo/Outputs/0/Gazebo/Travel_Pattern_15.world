@@ -1,0 +1,72 @@
+<?xml version='1.0' ?>
+<sdf version='1.7'>
+   <world name='Travel_Pattern_15'>
+      <include>
+         <uri>model://ground_plane</uri>
+      </include>
+      <include>
+         <uri>:model://My_Model</uri>
+      </include>
+      <include>
+         <uri>model://sun</uri>
+      </include>
+      <actor name='actor'>
+      <skin>
+        <filename>walk.dae</filename>
+      </skin>
+      <animation name='walking'>
+        <filename>walk.dae</filename>
+        <interpolate_x>true</interpolate_x>
+        <interpolate_y>true</interpolate_y>
+      </animation>
+      <script>
+        <trajectory id='0' type='walking'>
+          <waypoint>
+            <time>0.0</time>
+            <pose>8.625 0.425 0 0 0 -2.554</pose>
+          </waypoint>
+          <waypoint>
+            <time>0.8</time>
+            <pose>8.175 0.125 0 0 0 -2.517</pose>
+          </waypoint>
+          <waypoint>
+            <time>1.6</time>
+            <pose>7.725 -0.225 0 0 0 -2.517</pose>
+          </waypoint>
+          <waypoint>
+            <time>2.4000000000000004</time>
+            <pose>7.275 -0.525 0 0 0 -2.657</pose>
+          </waypoint>
+          <waypoint>
+            <time>3.2</time>
+            <pose>6.775 -0.725 0 0 0 -2.806</pose>
+          </waypoint>
+          <waypoint>
+            <time>4.0</time>
+            <pose>6.275 -0.875 0 0 0 -2.996</pose>
+          </waypoint>
+          <waypoint>
+            <time>4.800000000000001</time>
+            <pose>5.725 -0.875 0 0 0 3.142</pose>
+          </waypoint>
+          <waypoint>
+            <time>5.6000000000000005</time>
+            <pose>5.175 -0.875 0 0 0 3.142</pose>
+          </waypoint>
+          <waypoint>
+            <time>6.4</time>
+            <pose>4.625 -0.875 0 0 0 3.142</pose>
+          </waypoint>
+          <waypoint>
+            <time>7.2</time>
+            <pose>4.075 -0.875 0 0 0 3.332</pose>
+          </waypoint>
+          <waypoint>
+            <time>8.0</time>
+            <pose>3.575 -1.075 0 0 0 -2.761</pose>
+          </waypoint>
+        </trajectory>
+      </script>
+    </actor>
+   </world>
+</sdf>
