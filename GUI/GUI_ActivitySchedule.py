@@ -83,12 +83,14 @@ class Page1st():
     def cavas(self, root, order):
         Acts = ['Bath', 'Go out', 'Clean', 'Read', 'Watch TV']
         Colors = ['blue', 'deeppink', 'yellowgreen', 'yellow', 'gold']
+        TColors = ['white', 'white', 'black', 'black', 'black']
         Canvas = tk.Canvas(root, bg='white', height=50, width=500)
         self.Icons = {}
         self.item, self.mousexy = 0, [0, 0]
         for i in range(5):
             rect = Canvas.create_rectangle(20+100*i, 10, 80+100*i, 40, fill=Colors[order[i]], outline="black", width=3)
-            text = Canvas.create_text(50+100*i, 25, text=Acts[order[i]], font=('Helvetica 12 bold'))
+            text = Canvas.create_text(50+100*i, 25, text=Acts[order[i]], font=('Helvetica 12 bold'),
+                                      fill=TColors[order[i]])
             self.Icons[rect] = [text, i]
             self.Icons[text] = [rect, i]
         Canvas.bind('<Button-1>', self.mouseselect)
@@ -104,7 +106,6 @@ class Page1st():
         self.originx = xc
         self.mousexy = [xc, yc]
 
-
     def mousedrag(self, event):
         widget = event.widget
         xc = widget.canvasx(event.x)
@@ -112,7 +113,6 @@ class Page1st():
         self.Canvas.move(self.item, xc - self.mousexy[0], yc - self.mousexy[1])
         self.Canvas.move(self.Icons[self.item][0], xc - self.mousexy[0], yc - self.mousexy[1])
         self.mousexy = [xc, yc]
-
 
     def mouserelease(self, event):
         widget = event.widget

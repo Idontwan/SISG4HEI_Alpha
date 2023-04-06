@@ -4,9 +4,9 @@ from PIL import Image
 
 
 abs_file = os.path.abspath(__file__)
-abs_path = abs_file[:abs_file.rfind('/')]
-upper_path = abs_path[:abs_path.rfind('/')]
-outputs_path = upper_path + '/Outputs/'
+abs_path = abs_file[:abs_file.rfind('\\')]
+upper_path = abs_path[:abs_path.rfind('\\')]
+outputs_path = upper_path + '\\Outputs\\'
 if upper_path not in sys.path: sys.path.append(upper_path)
 
 
@@ -115,12 +115,11 @@ def write_robot_defin(file, L, W, H):
     content = '# Definition of the robot\n define kinect ranger\n' + \
               '(\n  sensor\n  (\n    range_max 6.5\n    fov 58.0\n' +  \
               '    samples 640\n  )\n  # generic model properties\n' + \
-              '  color "blaxk"\n  size [ 0.06 0.15 0.03 ]\n)\n\n' + \
+              '  gui_nose 0\n  size [ 0.06 0.15 0.03 ]\n  color "black"\n)\n\n' + \
               'define e_bio position\n(\n  pose [ 0.0 0.0 0.0 0.0 ]\n' + \
               '  odom_error [0.03 0.03 999999 999999 999999 0.02]\n' + \
               '  size [ ' + str(L) + ' ' + str(W) + ' ' + str(H) + ' ]\n' + \
-              '  gui_nose 1\n  gui_nose 1\n  color "red"\n\n' + \
-              '  kinect(pose [ -0.1 0.0 -0.11 0.0 ])\n)\n\n' + \
+              '  gui_nose 0\n  color "red"\n\n  kinect(pose [ -0.1 0.0 -0.11 0.0 ])\n)\n\n' + \
               '# Definition the size of all furniture\n'
     with open(file, 'w') as f:
         f.write(content)
@@ -156,7 +155,7 @@ def write_put_furs(file, fur_blocks, blocks_1_=[]):
 
 def generate_world_file(file_path, fur_blocks, blocks_1, x_origin, y_origin,
                         P_W, P_H, f_height, I, J, robot_x, robot_y):
-    file_path = file_path + '/Scene.world'
+    file_path = file_path + '\\Scene.world'
     write_robot_defin(file_path, 0.2552, 0.2552, 0.40)
     blocks_1_ = write_furs_size(file_path, fur_blocks, blocks_1=blocks_1)
     write_put_robot(file_path, robot_x, robot_y)
@@ -184,12 +183,12 @@ def main(j, H_dict, Se_dict, robot_x, robot_y):
     f_height, rooms = H_dict['0'], H_dict['1']
     blocks_0, blocks_1 = H_dict['2'], H_dict['3']
     walls, lims = Se_dict['Walls'], Se_dict['Boundary']
-    o_path = outputs_path + str(j) + '/Stage'
+    o_path = outputs_path + str(j) + '\\Stage'
     creat_floder(o_path)
     fur_blocks = plot_bitmap(f_height, blocks_0, walls, lims)
-    plt.savefig(o_path + '/Scene.png', bbox_inches='tight')
+    plt.savefig(o_path + '\\Scene.png', bbox_inches='tight')
     plt.close()
-    picture = Image.open(o_path + '/Scene.png')
+    picture = Image.open(o_path + '\\Scene.png')
     res, x_origin, y_origin, I_, J_ = cal_resolution(lims, picture)
     P_W, P_H = res * I_, res * J_
     generate_world_file(o_path, fur_blocks, blocks_1, x_origin, y_origin, P_W, P_H,

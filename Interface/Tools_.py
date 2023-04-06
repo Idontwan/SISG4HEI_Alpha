@@ -10,8 +10,8 @@ g_L, g_W = 5, 5
 
 
 abs_file = os.path.abspath(__file__)
-abs_path = abs_file[:abs_file.rfind('/')]
-upper_path = abs_path[:abs_path.rfind('/')]
+abs_path = abs_file[:abs_file.rfind('\\')]
+upper_path = abs_path[:abs_path.rfind('\\')]
 if upper_path not in sys.path: sys.path.append(upper_path)
 
 
@@ -19,7 +19,7 @@ import Load
 
 
 def load_disval(path):
-    [h_v, fname0, fname1] = path.split('/')
+    [h_v, fname0, fname1] = path.split('\\')
     return Load.load_filed('Discomfortable_value', h_v, fname0, fname1)
 
 

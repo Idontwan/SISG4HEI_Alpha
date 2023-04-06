@@ -14,7 +14,7 @@ if root_path+'\\Human_Path_Generation' not in sys.path: sys.path.append(root_pat
 if root_path+'\\Human_Activities_Schedule_Generation' not in sys.path:
     sys.path.append(root_path+'\\Human_Activities_Schedule_Generation')
 Data_path = root_path + '\\DataBase\\'
-Outputspath = root_path + '\\Outputs\\'
+Outputspath = root_path + '\\Outputs'
 
 
 import Tools_ as Tl
@@ -266,6 +266,8 @@ class Page1st():
         elif self.ivPIR.get()==1 and self.shownRP[1]!=[]:
             deleted_item = self.Canvas.find_closest(xc, yc)[0]
             if deleted_item in self.shownRP[1]:
+                delete_index = self.shownRP[1].index(deleted_item)
+                self.PIRSS[self.pindex].pop(delete_index)
                 self.Canvas.delete(deleted_item)
                 self.shownRP[1].remove(deleted_item)
 
@@ -318,16 +320,19 @@ class Page2nd():
         elif self.ivars[10].get()==0 and self.ivars[11].get()!=0:
             tkinter.messagebox.showerror(title='Error', message='You CAN NOT plot activity schedule without data!')
         else:
+            creat_floder(Outputspath)
+            old_house_num = len(os.listdir(Outputspath))
             for i in range(len(self.savelist)):
-                outputpath = Outputspath + str(i)
-                datapath = Data_path + self.savelist[i]
+                i_ = i + old_house_num
+                outputpath = Outputspath + '\\' + str(i_)
                 creat_floder(outputpath)
                 [h_v, fname0, fname1] = self.savelist[i].split('\\')
                 House_dict = Load.load_se_map(h_v, fname0, fname1)
+                if self.ivars[0].get(): FSave.save_normaljson(outputpath, House_dict, 'Semantic')
                 rooms, TBs, furs, doors, walls, lims = Load.dic2house(House_dict)
                 H_dict = Load.load_normaljson('Height_Function', h_v, fname0, fname1)
                 TPs = [self.TPss[i][k][1][0] for k in range(len(self.TPss[i]))]
-                if self.ivars[0].get(): FSave.save_normaljson(outputpath, House_dict, 'Semantic')
+                robot_x, robot_y = self.robots[i][0], self.robots[i][1]
                 if self.ivars[1].get():
                     Plot.layout_plot(TBs, furs, doors, walls, lims)
                     Plot.save_plot(outputpath, 'Layout')
@@ -374,11 +379,10 @@ class Page2nd():
                     Plot.Plot_ActSeq(times, durs, nacts, outputpath)
                 if self.ivars[12].get():
                     PIRlog = PR.PIRrecords(self.PIRSS[i], TPs, self.timess[i], self.endidss[i], self.locationss[i])
-                    PR.save_records(outputpath, PIRlog)
+                    PR.save_records(outputpath, PIRlog, self.PIRSS[i])
                 if self.ivars[13].get():
-                    robot_x, robot_y = self.robots[i][0], self.robots[i][1]
-                    TRN.main(i, H_dict, House_dict, robot_x, robot_y)
+                    TRN.main(i_, H_dict, House_dict, robot_x, robot_y)
                 if self.ivars[14].get():
-                    TGz.main(rooms, TBs, doors, walls, lims, H_dict, i, TPs)
+                    TGz.main(rooms, TBs, doors, walls, lims, H_dict, i_, TPs, robot_x, robot_y)
             tkinter.messagebox.showinfo(title='Info', message='CONGRATULATION! You have completed all procedures!')
             self.master.quit()

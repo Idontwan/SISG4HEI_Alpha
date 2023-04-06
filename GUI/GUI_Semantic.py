@@ -121,20 +121,22 @@ class Page2nd():
     def CheButCol(self, zone, furniture):
         color = Dict_ZC[zone]
         CheButCol = tk.Frame(self.CheckButtons, bg=color)
-        tk.Label(CheButCol, text=zone+' Zone', font=('Helvetica 13 bold'), width=17, height=2, anchor='w', bg=color).pack()
+        tk.Label(CheButCol, text=zone+' Zone', font=('Helvetica 13 bold'), width=17, height=2, anchor='w', bg=color,
+                 fg='white').pack()
         N = 6 - len(furniture)
         not_Lroom = len(furniture) > 3
         if not_Lroom:
             P_fur = furniture[0]
-            tk.Label(CheButCol, text=P_fur, font=('Helvetica 11 bold'), width=12, height=2, anchor='w', bg=color).pack()
+            tk.Label(CheButCol, text=P_fur, font=('Helvetica 11 bold'), width=12, height=2, anchor='w', bg=color,
+                     fg='white').pack()
         tk_vars = []
         for fur in furniture[not_Lroom:]:
             var = tk.IntVar()
-            tk.Checkbutton(CheButCol, text=fur, variable=var, font=('Helvetica 11 bold'), onvalue=1,\
-                           offvalue=0, width=14, height=2, anchor='w', bg=color).pack()
+            tk.Checkbutton(CheButCol, text=fur, variable=var, font=('Helvetica 11 bold'), onvalue=1, offvalue=0,
+                           width=14, height=2, anchor='w', bg=color, fg='white', selectcolor='black').pack()
             tk_vars.append(var)
         for i in range(N):
-            tk.Label(CheButCol, text=' ', font=('Helvetica 11 bold'), width=12, height=2, bg=color).pack()
+            tk.Label(CheButCol, text=' ', font=('Helvetica 11 bold'), width=12, height=2, bg=color, fg='white').pack()
         CheButCol.pack(side='left', padx=20, pady=10)
         return tk_vars
 

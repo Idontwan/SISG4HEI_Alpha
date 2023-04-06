@@ -54,21 +54,23 @@ def gen_subtxt(absminu, i):
     txt1 = str(day)+'d '+PorA+' '+str(hour)+'h '+str(minu)+'m '+str(second)+'s'
     txt2 = 'Sensor #' + str(ID)
     txt3 = 'Turn On' if on_off else 'Turn Off'
-    txt_l = [txt1, txt2, txt3, '\n']
+    txt_l = ['\n', txt1, txt2, txt3]
     return '   '.join(txt_l)
 
 
-def save_records(path, PIRlog):
+def save_records(path, PIRlog, sensors):
     timeline = []
     for i in range(len(PIRlog)):
         for time in PIRlog[i]:
             timeline.append((time, i))
     timeline = sorted(timeline, key=lambda x: x[0])
     Txt = ''
+    for i in range(len(sensors)):
+        Txt += 'Sensor #' + str(i) + ' : [ ' + str(sensors[i][0]) + ', ' + str(sensors[i][1]) + ']  '
     for (time, i) in timeline:
         subtxt = gen_subtxt(time, i)
         Txt += subtxt
-    creat_floder(path+'/PIR')
-    filename = path + '/PIR/Record.txt'
+    creat_floder(path+'\\PIR')
+    filename = path + '\\PIR\\Record.txt'
     with open(filename, "w") as f:
         f.write(Txt)

@@ -302,11 +302,11 @@ class Page3rd():
         self.figure(Canvas, path)
         Right = tk.Frame(Canvas, )
         Legend = tk.Frame(Right, )
-        name_color = [['Legend', None], ['Resting Zone', 'blue'], ['Living Zone', 'red'],
-                      ['Cooking Zone', 'green'], ['Toilet', 'yellow'], ['Bathroom', 'purple']]
+        name_color = [['Legend', None, 'black'], ['Resting Zone', 'blue', 'white'], ['Living Zone', 'red', 'white'],
+                      ['Cooking Zone', 'green', 'white'], ['Toilet', 'yellow', 'black'], ['Bathroom', 'purple', 'white']]
         for i in range(6):
-            tk.Label(Legend, text=name_color[i][0], bg=name_color[i][1], font=('Helvetica 12 bold'), \
-                     width=15).pack(pady=5)
+            tk.Label(Legend, text=name_color[i][0], bg=name_color[i][1], fg=name_color[i][2], \
+                     font=('Helvetica 12 bold'), width=15).pack(pady=5)
         Legend.pack(pady=10)
         self.Modify = tk.IntVar()
         tk.Checkbutton(Right, text='Modification', width=15, font=('Helvetica 12 bold'), \

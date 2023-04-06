@@ -4,7 +4,7 @@ from PIL import Image,ImageTk
 
 
 abs_file = os.path.abspath(__file__)
-abs_path = abs_file[:abs_file.rfind('\\')]
+abs_path = abs_file[:abs_file.rfind("\\")]
 pic_path = abs_path + '\\Pics\\'
 
 
@@ -15,12 +15,12 @@ class GUIbase():
     def __init__(self, master):
         self.root = master
         self.root.config()
-        self.root.title('SISG4HEI_Alpha') #Simulated Indoor Scenario Generator for Houses with Elderly Individual
+        self.root.title('SISG4HEI_Alpha') #Simulated Indoor Scenario Generator for Houses with Elderly Individuals
         self.root.geometry('930x620')
         top_Frame = tk.Frame(self.root, )
-        tk.Label(top_Frame, text='Simulated Indoor Scenario Generator ', font=('Helvetica 20 bold'), \
+        tk.Label(top_Frame, text='Simulated Indoor Scenario Generator ', font=('Helvetica 20 bold'),
                  height=2).pack(side='left')
-        tk.Label(top_Frame, text='for Houses with Elderly Individuals', font=('Helvetica 12 bold'), \
+        tk.Label(top_Frame, text='for Houses with Elderly Individuals', font=('Helvetica 12 bold'),
                  height=2, anchor='s').pack(side='left')
         top_Frame.pack()
         GS.Page1st(self.root)

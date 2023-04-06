@@ -2,9 +2,9 @@ import os, sys
 
 
 abs_file = os.path.abspath(__file__)
-abs_path = abs_file[:abs_file.rfind('/')]
-upper_path = abs_path[:abs_path.rfind('/')]
-outputs_path = upper_path + '/Outputs/'
+abs_path = abs_file[:abs_file.rfind('\\')]
+upper_path = abs_path[:abs_path.rfind('\\')]
+outputs_path = upper_path + '\\Outputs\\'
 if upper_path not in sys.path: sys.path.append(upper_path)
 
 
@@ -28,7 +28,7 @@ def write_config(path):
     content = '<?xml version="1.0" ?>\n<model>\n    <name>House_Model</name>\n    <version>1.0</version>\n    '+ \
               '<sdf version="1.7">model.sdf</sdf>\n    <author>\n        <name></name>\n        <email></email>\n'+ \
               '    </author>\n    <description></description>\n</model>'
-    with open(path+'/model.config', 'w') as f:
+    with open(path+'\\model.config', 'w') as f:
         f.write(content)
 
 
@@ -201,19 +201,33 @@ def deter_name(SubP_list, name):
     return name0s, name1s
 
 
+def deter_robang(ox, oy, x, y):
+    if abs(x-ox) < abs (y-oy):
+        return -1.5708 if oy<y else 1.5708
+    else: return 3.1416 if ox<x else 0
+
+
 def write_model(rj, name0s, name1s, P_ls, subS_lss, subP_lss, ox0, oy0):
-    path = outputs_path + str(rj) + '/Gazebo/My_Model'
+    path = outputs_path + str(rj) + '\\Gazebo\\My_Model'
     creat_floder(path)
     write_config(path)
     content = "<?xml version='1.0'?>\n<sdf version='1.7'>\n  <model name='My_Model'>\n    <pose>"+str(ox0)+" "+ \
               str(oy0)+" 0 0 -0 0</pose>\n"
-    file_path = path+'/model.sdf'
+    file_path = path+'\\model.sdf'
     with open(file_path, 'w') as f:
         f.write(content)
     for i in range(len(name0s)):
         write_link(file_path, P_ls[i], name0s[i], name1s[i], subS_lss[i], subP_lss[i])
     with open(file_path, 'a') as f:
         f.write("    <static>1</static>\n  </model>\n</sdf>")
+
+
+def place_robot(location, filepath):
+    [x, y, ang] = location
+    content = "      </include>\n      <include>\n        <uri>model://Robot</uri>\n        <pose>"+str(x)+" "+str(y)+ \
+              " 0 0 0 "+str(ang)+"</pose>\n"
+    with open(filepath, 'a') as f:
+        f.write(content)
 
 
 def write_waypoint(filepath, i, step_time, waypoint):
@@ -225,16 +239,19 @@ def write_waypoint(filepath, i, step_time, waypoint):
         f.write(content)
 
 
-def write_TP(rj, k, TP, step_time=0.8):
-    file_path = outputs_path + str(rj) + '/Gazebo/Travel_Pattern_' + str(k) + '.world'
+def write_TP(rj, k, TP, RobLoc, step_time=0.8):
+    file_path = outputs_path + str(rj) + '\\Gazebo\\Travel_Pattern_' + str(k) + '.world'
     content = "<?xml version='1.0' ?>\n<sdf version='1.7'>\n   <world name='Travel_Pattern_"+str(k)+"'>\n      "+ \
-              "<include>\n         <uri>model://ground_plane</uri>\n      </include>\n      <include>\n         "+ \
-              "<uri>:model://My_Model</uri>\n      </include>\n      <include>\n         <uri>model://sun</uri>\n"+ \
-              "      </include>\n      <actor name='actor'>\n      <skin>\n        <filename>walk.dae</filename>\n"+ \
+              "<include>\n        <uri>model://ground_plane</uri>\n      </include>\n      <include>\n        "+ \
+              "<uri>model://My_Model</uri>\n      </include>\n      <include>\n        <uri>model://sun</uri>\n"
+    with open(file_path, 'w') as f:
+        f.write(content)
+    place_robot(RobLoc, file_path)
+    content = "      </include>\n      <actor name='actor'>\n      <skin>\n        <filename>walk.dae</filename>\n"+ \
               "      </skin>\n      <animation name='walking'>\n        <filename>walk.dae</filename>\n        "+ \
               "<interpolate_x>true</interpolate_x>\n        <interpolate_y>true</interpolate_y>\n      </animation>"+ \
               "\n      <script>\n        <trajectory id='0' type='walking'>\n"
-    with open(file_path, 'w') as f:
+    with open(file_path, 'a') as f:
         f.write(content)
     for i in range(len(TP)):
         write_waypoint(file_path, i, step_time, TP[i])
@@ -242,8 +259,11 @@ def write_TP(rj, k, TP, step_time=0.8):
         f.write("        </trajectory>\n      </script>\n    </actor>\n   </world>\n</sdf>")
 
 
-def main(rooms, TBs, doors, walls, lims, H_dict, rj, savedTPs):
+def main(rooms, TBs, doors, walls, lims, H_dict, rj, savedTPs, robot_x, robot_y):
     ox0, oy0 = (lims[0][0]+lims[0][1])/2, (lims[1][0]+lims[1][1])/2
+    robot_ang = deter_robang(ox0, oy0, robot_x, robot_y)
+    robot_x, robot_y = robot_x/100, robot_y/100
+    RobLoc = [robot_x, robot_y, robot_ang]
     f_height, blocks_0, blocks_1 = H_dict['0'], H_dict['2'], H_dict['3']
     WPose_list, WsubP_list, WsubS_list = wall_plsl(rooms, TBs, doors, walls, f_height, ox0, oy0)
     Wname0s, Wname1s = deter_name(WsubP_list, "Wall")
@@ -257,8 +277,8 @@ def main(rooms, TBs, doors, walls, lims, H_dict, rj, savedTPs):
         for k in range(len(subS_lists[i])):
             subS_lists[i][k] = unit_tran(subS_lists[i][k])
             subP_lists[i][k] = unit_tran(subP_lists[i][k])
-    path = outputs_path + str(rj) + '/Gazebo'
+    path = outputs_path + str(rj) + '\\Gazebo'
     creat_floder(path)
     write_model(rj, Name0s, Name1s, P_lists, subS_lists, subP_lists, ox0, oy0)
     for i in range(len(savedTPs)):
-        write_TP(rj, i, savedTPs[i])
+        write_TP(rj, i, savedTPs[i], RobLoc)

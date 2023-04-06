@@ -1,0 +1,19 @@
+2d AM 7h 20m 0s   Sleep   0h 32m 30s   
+2d AM 7h 52m 31s   Wash and Brush   0h 6m 3s   
+2d AM 7h 58m 35s   Take Food   0h 0m 46s   
+2d AM 7h 59m 22s   Cook   0h 8m 3s   
+2d AM 8h 7m 26s   Take TableWare   0h 1m 16s   
+2d AM 8h 8m 43s   Eat   0h 24m 21s   
+2d AM 8h 33m 5s   Relax   0h 15m 33s   
+2d AM 8h 48m 39s   Read   2h 44m 22s   
+2d AM 11h 33m 1s   Go to Toilet   0h 1m 33s   
+2d AM 11h 34m 35s   Take Food   0h 0m 43s   
+2d AM 11h 35m 18s   Cook   0h 7m 33s   
+2d AM 11h 42m 54s   Take TableWare   0h 1m 13s   
+2d AM 11h 44m 7s   Eat   0h 22m 52s   
+2d PM 0h 6m 58s   Sleep   0h 19m 6s   
+2d PM 0h 26m 5s   Relax   0h 24m 33s   
+2d PM 0h 50m 39s   Wander   0h 0m 37s   
+2d PM 0h 51m 16s   Relax   1h 44m 17s   
+2d PM 2h 35m 35s   Go to Toilet   0h 1m 26s   
+2d PM 2h 37m 3s   Relax   0h 52m 55s   

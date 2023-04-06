@@ -1,0 +1,17 @@
+Sensor #0 : [-395, -75]  Sensor #1 : [30, -190]  Sensor #2 : [-230, 140]  Sensor #3 : [-575, 65]  
+   1d AM 9h 18m 53.3s   Sensor #0   Turn On
+   1d AM 9h 24m 29.1s   Sensor #0   Turn Off
+   1d AM 9h 56m 41.1s   Sensor #2   Turn On
+   1d AM 9h 56m 42.4s   Sensor #2   Turn Off
+   1d AM 9h 56m 45.6s   Sensor #0   Turn On
+   1d AM 9h 56m 48.9s   Sensor #0   Turn Off
+   1d AM 9h 56m 57.8s   Sensor #2   Turn On
+   1d AM 9h 56m 59.2s   Sensor #2   Turn Off
+   1d PM 0h 12m 34.0s   Sensor #0   Turn On
+   1d PM 0h 12m 34.4s   Sensor #0   Turn Off
+   1d PM 0h 13m 36.3s   Sensor #3   Turn On
+   1d PM 0h 13m 38.2s   Sensor #3   Turn Off
+   1d PM 0h 22m 27.6s   Sensor #3   Turn On
+   1d PM 0h 22m 29.3s   Sensor #3   Turn Off
+   1d PM 1h 22m 29.2s   Sensor #2   Turn On
+   1d PM 1h 22m 29.7s   Sensor #2   Turn Off

@@ -11,6 +11,9 @@ Num2Act = ['Sleep', 'Sleep', 'Wash and Brush', 'Cook', 'Take TableWare', 'Take F
 AScolors = ['navy', 'navy', 'mediumpurple', 'green', 'forestgreen', 'aquamarine',
           'lime', 'blue', 'purple', 'deeppink', 'darkorange', 'darkorange',
           'yellowgreen', 'yellow', 'gold', 'indigo', 'red', 'silver']
+ASTcolors = ['white', 'white', 'black', 'white', 'white', 'black',
+             'black', 'white', 'white', 'white', 'black', 'black',
+             'black', 'black', 'black', 'white', 'white', 'black']
 
 
 def realxy2can(real_size, x0, y0, scale, PW, PH, Rote, Is_Rect=True):
@@ -36,8 +39,7 @@ def canxy2real(can_size, x0, y0, scale, PW, PH, Rote):
 
 
 def layoutplot(Canvas, Can_size, Rooms, T_Bs, Furns, Doors, Walls, Lims, showbg=True):
-    Colors = {'Bedroom': 'blue', 'Kitchen': 'green', 'Livingroom': 'red', 'Toilet': 'yellow', 'Bathroom': 'purple'} if \
-        showbg else {'Bedroom': 'white', 'Kitchen': 'white', 'Livingroom': 'white', 'Toilet': 'white', 'Bathroom': 'white'}
+    Colors = {'Bedroom': 'blue', 'Kitchen': 'green', 'Livingroom': 'red', 'Toilet': 'yellow', 'Bathroom': 'purple'}
     NameFur_set = ['Bed', 'Wardrobe', 'Desk', 'Kitchen_Stove', 'Cupboard', 'Refrigerator', 'Wash_Machine',
                    'Trash_Bin', 'Dinner_Table', 'Sofa']
     Fur_set, Text = [[] for i in range(10)], [] # text is for locating the index of all text objective in canvas
@@ -56,9 +58,9 @@ def layoutplot(Canvas, Can_size, Rooms, T_Bs, Furns, Doors, Walls, Lims, showbg=
     if Scale>2: font = 'Times 10' if Scale==2.5 else 'Times 7'
     T_rooms = Rooms + T_Bs
     for room in T_rooms:
-        color = Colors[room[-1]]
+        bcolor = Colors[room[-1]] if showbg else 'white'
         canxys = realxy2can(room[:4], Offset[0], Offset[1], Scale, Can_W, Can_H, Rotate_Flag) # [x0, y0, x1, y1]
-        Canvas.create_rectangle(canxys[0], canxys[1], canxys[2], canxys[3], fill=color, outline='')
+        Canvas.create_rectangle(canxys[0], canxys[1], canxys[2], canxys[3], fill=bcolor, outline='')
         if room[-1] == 'Toilet' or room[-1] == 'Bathroom':
             Canvas.create_line(canxys[0], canxys[1], canxys[0], canxys[3], width=3)
             Canvas.create_line(canxys[0], canxys[1], canxys[2], canxys[1], width=3)
@@ -66,12 +68,13 @@ def layoutplot(Canvas, Can_size, Rooms, T_Bs, Furns, Doors, Walls, Lims, showbg=
             Canvas.create_line(canxys[2], canxys[3], canxys[0], canxys[3], width=3)
     for i, room in enumerate(Furns):
         Text.append({})
+        fcolor = 'white' if showbg else 'black'
         for fur in room:
             name = fur[-1]
             canxys = realxy2can(fur[:4], Offset[0], Offset[1], Scale, Can_W, Can_H, Rotate_Flag)
-            fur_Obj = Canvas.create_rectangle(canxys[0], canxys[1], canxys[2], canxys[3])
+            fur_Obj = Canvas.create_rectangle(canxys[0], canxys[1], canxys[2], canxys[3], outline=fcolor)
             text_Obj = Canvas.create_text((canxys[0]+canxys[2])//2, (canxys[1]+canxys[3])//2,
-                                          text=Code[name], font=font)
+                                          text=Code[name], font=font, fill=fcolor)
             if name in NameFur_set:
                 j = NameFur_set.index(name)
                 Fur_set[j].append(fur_Obj)
@@ -155,7 +158,7 @@ def add_rectangle(Canvas, t0, dur, num, startminu, scale, Canvas_W):
     if x1-x0 > 10*j:
         for i in range(N):
             y = 135 - (N-1)*8 + 16*i
-            Canvas.create_text(int((x0+x1)/2), y, text=text_list[i], font=('Helvetica 11 bold'), fill='white')
+            Canvas.create_text(int((x0+x1)/2), y, text=text_list[i], font=('Helvetica 11 bold'), fill=ASTcolors[num])
 
 
 def tick_text(time):

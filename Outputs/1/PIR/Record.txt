@@ -1,43 +1,45 @@
-1d AM 8h 21m 20.6s   Sensor #1   Turn On   
-1d AM 8h 27m 10.9s   Sensor #1   Turn Off   
-1d AM 8h 43m 58.9s   Sensor #3   Turn On   
-1d AM 8h 56m 24.5s   Sensor #3   Turn Off   
-1d AM 8h 57m 22.0s   Sensor #3   Turn On   
-1d AM 8h 57m 22.6s   Sensor #3   Turn Off   
-1d AM 11h 42m 10.6s   Sensor #2   Turn On   
-1d AM 11h 42m 11.0s   Sensor #2   Turn Off   
-1d AM 11h 43m 6.6s   Sensor #1   Turn On   
-1d AM 11h 57m 25.7s   Sensor #1   Turn Off   
-1d AM 11h 57m 29.7s   Sensor #2   Turn On   
-1d AM 11h 57m 31.5s   Sensor #2   Turn Off   
-1d PM 0h 0m 24.2s   Sensor #1   Turn On   
-1d PM 0h 0m 26.8s   Sensor #1   Turn Off   
-1d PM 0h 0m 32.7s   Sensor #2   Turn On   
-1d PM 0h 0m 35.5s   Sensor #2   Turn Off   
-1d PM 0h 0m 36.4s   Sensor #2   Turn On   
-1d PM 0h 0m 37.4s   Sensor #2   Turn Off   
-1d PM 0h 0m 44.7s   Sensor #2   Turn On   
-1d PM 0h 0m 46.4s   Sensor #2   Turn Off   
-1d PM 0h 0m 48.2s   Sensor #2   Turn On   
-1d PM 0h 0m 49.0s   Sensor #2   Turn Off   
-1d PM 0h 17m 10.6s   Sensor #2   Turn On   
-1d PM 0h 17m 11.0s   Sensor #2   Turn Off   
-1d PM 0h 18m 0.3s   Sensor #1   Turn On   
-1d PM 0h 18m 0.7s   Sensor #1   Turn Off   
-1d PM 0h 49m 44.9s   Sensor #3   Turn On   
-1d PM 1h 2m 7.5s   Sensor #3   Turn Off   
-1d PM 1h 3m 4.0s   Sensor #3   Turn On   
-1d PM 1h 3m 4.6s   Sensor #3   Turn Off   
-1d PM 5h 56m 38.4s   Sensor #2   Turn On   
-1d PM 5h 56m 39.5s   Sensor #2   Turn Off   
-1d PM 5h 56m 46.4s   Sensor #2   Turn On   
-1d PM 5h 56m 47.4s   Sensor #2   Turn Off   
-1d PM 6h 42m 36.3s   Sensor #3   Turn On   
-1d PM 6h 54m 9.5s   Sensor #3   Turn Off   
-1d PM 6h 55m 7.0s   Sensor #3   Turn On   
-1d PM 6h 55m 7.6s   Sensor #3   Turn Off   
-1d PM 7h 30m 26.9s   Sensor #2   Turn On   
-1d PM 7h 30m 28.3s   Sensor #2   Turn Off   
-1d PM 7h 32m 27.2s   Sensor #2   Turn On   
-1d PM 7h 32m 28.9s   Sensor #2   Turn Off   
-1d PM 7h 32m 34.6s   Sensor #0   Turn On   
+Sensor #0 : [150, -60]  Sensor #1 : [435, 35]  Sensor #2 : [695, 45]  
+   1d AM 9h 6m 49.5s   Sensor #0   Turn On
+   1d AM 9h 6m 51.0s   Sensor #0   Turn Off
+   1d AM 9h 6m 53.9s   Sensor #1   Turn On
+   1d AM 9h 6m 55.3s   Sensor #1   Turn Off
+   1d AM 9h 13m 7.4s   Sensor #1   Turn On
+   1d AM 9h 13m 9.2s   Sensor #1   Turn Off
+   1d AM 10h 25m 42.6s   Sensor #1   Turn On
+   1d AM 10h 25m 44.2s   Sensor #1   Turn Off
+   1d AM 10h 37m 9.1s   Sensor #1   Turn On
+   1d AM 10h 37m 10.7s   Sensor #1   Turn Off
+   1d AM 10h 37m 13.6s   Sensor #0   Turn On
+   1d AM 10h 38m 23.9s   Sensor #0   Turn Off
+   1d AM 10h 38m 24.7s   Sensor #0   Turn On
+   1d AM 10h 38m 26.4s   Sensor #0   Turn Off
+   1d AM 11h 23m 44.9s   Sensor #1   Turn On
+   1d AM 11h 23m 46.6s   Sensor #1   Turn Off
+   1d AM 11h 23m 48.7s   Sensor #2   Turn On
+   1d AM 11h 23m 50.5s   Sensor #2   Turn Off
+   1d AM 11h 33m 45.1s   Sensor #2   Turn On
+   1d AM 11h 33m 46.1s   Sensor #2   Turn Off
+   1d AM 11h 58m 38.2s   Sensor #1   Turn On
+   1d AM 11h 58m 39.3s   Sensor #1   Turn Off
+   1d PM 0h 10m 17.3s   Sensor #0   Turn On
+   1d PM 0h 10m 18.6s   Sensor #0   Turn Off
+   1d PM 3h 1m 54.4s   Sensor #0   Turn On
+   1d PM 3h 1m 55.9s   Sensor #0   Turn Off
+   1d PM 3h 1m 58.8s   Sensor #1   Turn On
+   1d PM 3h 2m 0.5s   Sensor #1   Turn Off
+   1d PM 3h 3m 18.3s   Sensor #1   Turn On
+   1d PM 3h 3m 20.0s   Sensor #1   Turn Off
+   1d PM 3h 14m 16.0s   Sensor #1   Turn On
+   1d PM 3h 14m 17.6s   Sensor #1   Turn Off
+   1d PM 3h 14m 21.5s   Sensor #1   Turn On
+   1d PM 3h 14m 23.2s   Sensor #1   Turn Off
+   1d PM 3h 14m 33.0s   Sensor #1   Turn On
+   1d PM 3h 14m 36.4s   Sensor #1   Turn Off
+   1d PM 6h 11m 44.9s   Sensor #1   Turn On
+   1d PM 6h 11m 46.6s   Sensor #1   Turn Off
+   1d PM 6h 11m 48.7s   Sensor #2   Turn On
+   1d PM 6h 11m 50.5s   Sensor #2   Turn Off
+   1d PM 6h 21m 38.2s   Sensor #2   Turn On
+   1d PM 6h 21m 39.1s   Sensor #2   Turn Off
+   1d PM 6h 47m 31.3s   Sensor #1   Turn On
+   1d PM 6h 47m 33.0s   Sensor #1   Turn Off
