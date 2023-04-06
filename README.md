@@ -12,7 +12,7 @@ This project demostrates the codes and outputs of SISG4HEI_Alpha. Generated indo
 3. Need Libraries such as numpy, json, matplotlib, PIL, tkinter
 
 ## Instruction
-Run SISG4HEI_Alpha/Outputs/GUI/GUI_Base.py, then follow [this video](https://www.youtube.com/watch?v=Y1_bpkHulO0).
+Run SISG4HEI_Alpha\Outputs\GUI\GUI_Base.py, then follow [this video](https://www.youtube.com/watch?v=Y1_bpkHulO0).
 
 ## Author
 Can Jiang, Mita Laboratory, Keio University
